@@ -1,0 +1,19 @@
+
+.weather_container {
+    margin: 100px 30%;
+}
+
+.data_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+.data_container h1 {
+    font-size: 60px;
+}
+
+.data_container p {
+    margin: 0;
+}

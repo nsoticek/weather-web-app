@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PicElement from './components/PicElement';
+import ShowWheater from './components/ShowWheater';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      city: '',
+    }
+  }
+
+setCity = (city) => {
+    this.setState({ city: city });
+    console.log(this.state.city);
 }
 
-export default App;
+  render() {
+    return (
+      <div>
+        {this.state.city == '' && <PicElement setCity={this.setCity}></PicElement>}
+        {this.state.city != '' && <ShowWheater city={this.state.city} />}
+      </div>
+    );
+  }
+}
